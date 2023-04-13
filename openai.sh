@@ -27,7 +27,7 @@ else
 	echo -e "[IPv4]"
 	check4=`ping 1.1.1.1 -c 1 2>&1`;
 	if [[ "$check4" != *"received"* ]] && [[ "$check4" != *"transmitted"* ]];then
-		echo -e "\033[34mIPv4 is not supported on the current host. Skip...\033[0m";
+		echo -e "\033[34m当前主机不支持IPv4.跳过...\033[0m";
 	else
 		# local_ipv4=$(curl -4 -s --max-time 10 api64.ipify.org)
 		local_ipv4=$(curl -4 -sS https://chat.openai.com/cdn-cgi/trace | grep "ip=" | awk -F= '{print $2}')
@@ -37,16 +37,16 @@ else
 		iso2_code4=$(curl -4 -sS https://chat.openai.com/cdn-cgi/trace | grep "loc=" | awk -F= '{print $2}')
 		if [[ "${SUPPORT_COUNTRY[@]}"  =~ "${iso2_code4}" ]]; 
 		then
-			echo -e "${GREEN}Your IP supports access to OpenAI. Region: ${iso2_code4}${PLAIN}" 
+			echo -e "${GREEN}您的 IP 支持访问 OpenAI. 地区: ${iso2_code4}${PLAIN}" 
 		else
-			echo -e "${RED}Region: ${iso2_code4}. Not support OpenAI at this time.${PLAIN}"
+			echo -e "${RED}地区: ${iso2_code4}. 目前不支持 OpenAI.${PLAIN}"
 		fi
 	fi
 	echo "-------------------------------------"
 	echo -e "[IPv6]"
 	check6=`ping6 240c::6666 -c 1 2>&1`;
 	if [[ "$check6" != *"received"* ]] && [[ "$check6" != *"transmitted"* ]];then
-		echo -e "\033[34mIPv6 is not supported on the current host. Skip...\033[0m";    
+		echo -e "\033[34m当前主机不支持IPv6.跳过...\033[0m";    
 	else
 		# local_ipv6=$(curl -6 -s --max-time 20 api64.ipify.org)
 		local_ipv6=$(curl -6 -sS https://chat.openai.com/cdn-cgi/trace | grep "ip=" | awk -F= '{print $2}')
@@ -56,9 +56,9 @@ else
 		iso2_code6=$(curl -6 -sS https://chat.openai.com/cdn-cgi/trace | grep "loc=" | awk -F= '{print $2}')
 		if [[ "${SUPPORT_COUNTRY[@]}"  =~ "${iso2_code6}" ]]; 
 		then
-			echo -e "${GREEN}Your IP supports access to OpenAI. Region: ${iso2_code6}${PLAIN}" 
+			echo -e "${GREEN}您的 IP 支持访问 OpenAI. Region: ${iso2_code6}${PLAIN}" 
 		else
-			echo -e "${RED}Region: ${iso2_code6}. Not support OpenAI at this time.${PLAIN}"
+			echo -e "${RED}Region: ${iso2_code6}. 目前不支持 OpenAI.${PLAIN}"
 		fi
 	fi
 	echo "-------------------------------------"
