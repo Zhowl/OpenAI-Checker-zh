@@ -22,7 +22,7 @@ echo -e "${BLUE}https://github.com/missuo/OpenAI-Checker${PLAIN}"
 echo "-------------------------------------"
 if [[ $(curl -sS https://chat.openai.com/ -I | grep "text/plain") != "" ]]
 then
-	echo "Your IP is BLOCKED! 您的 IP 已被封锁！"
+	echo "您的 IP 已被封锁！"
 else
 	echo -e "[IPv4]"
 	check4=`ping 1.1.1.1 -c 1 2>&1`;
