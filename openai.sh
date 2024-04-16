@@ -1,14 +1,4 @@
 #!/bin/bash
-###
- # @Author: Vincent Young
- # @Date: 2023-02-09 17:39:59
- # @LastEditors: Vincent Young
- # @LastEditTime: 2023-02-15 20:54:40
- # @FilePath: /OpenAI-Checker/openai.sh
- # @Telegram: https://t.me/missuo
- # 
- # Copyright © 2023 by Vincent, All Rights Reserved. 
-### 
 
 RED='\033[0;31m'
 GREEN='\033[0;32m'
@@ -17,8 +7,8 @@ PLAIN='\033[0m'
 BLUE="\033[36m"
 
 SUPPORT_COUNTRY=(AL DZ AD AO AG AR AM AU AT AZ BS BD BB BE BZ BJ BT BO BA BW BR BN BG BF CV CA CL CO KM CG CR CI HR CY CZ DK DJ DM DO EC SV EE FJ FI FR GA GM GE DE GH GR GD GT GN GW GY HT VA HN HU IS IN ID IQ IE IL IT JM JP JO KZ KE KI KW KG LV LB LS LR LI LT LU MG MW MY MV ML MT MH MR MU MX FM MD MC MN ME MA MZ MM NA NR NP NL NZ NI NE NG MK NO OM PK PW PS PA PG PY PE PH PL PT QA RO RW KN LC VC WS SM ST SN RS SC SL SG SK SI SB ZA KR ES LK SR SE CH TW TZ TH TL TG TO TT TN TR TV UG UA AE GB US UY VU ZM)
-echo -e "${BLUE}OpenAI Access Checker. Made by Vincent${PLAIN}"
-echo -e "${BLUE}https://github.com/missuo/OpenAI-Checker${PLAIN}"
+echo -e "${BLUE}OpenAI Access Checker.${PLAIN}"
+echo -e "${BLUE}https://github.com/Zhowl/OpenAI-Checker-zh${PLAIN}"
 echo "-------------------------------------"
 if [[ $(curl -sS https://chat.openai.com/ -I | grep "text/plain") != "" ]]
 then
@@ -56,9 +46,9 @@ else
 		iso2_code6=$(curl -6 -sS https://chat.openai.com/cdn-cgi/trace | grep "loc=" | awk -F= '{print $2}')
 		if [[ "${SUPPORT_COUNTRY[@]}"  =~ "${iso2_code6}" ]]; 
 		then
-			echo -e "${GREEN}您的 IP 支持访问 OpenAI. Region: ${iso2_code6}${PLAIN}" 
+			echo -e "${GREEN}您的 IP 支持访问 OpenAI. 地区: ${iso2_code6}${PLAIN}" 
 		else
-			echo -e "${RED}Region: ${iso2_code6}. 目前不支持 OpenAI.${PLAIN}"
+			echo -e "${RED}地区: ${iso2_code6}. 目前不支持 OpenAI.${PLAIN}"
 		fi
 	fi
 	echo "-------------------------------------"
