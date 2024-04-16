@@ -13,10 +13,7 @@ At present, there are 163 countries supported, and I will continue to update the
 目前支持163个国家和地区，我将继续更新OpenAI新支持的国家和地区。（截至2023年4月5日）
 
 ## Usage 用法
-```shell
-bash <(curl -Ls https://cpp.li/openai)
-```
-or
+
 ```shell
 bash <(curl -Ls https://raw.githubusercontent.com/Zhowl/OpenAI-Checker-zh/main/openai.sh)
 ```
